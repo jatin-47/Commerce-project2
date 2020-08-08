@@ -1,0 +1,16 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+
+{% block title %}
+    betBid - About
+{% endblock %}
+
+{% block body %}
+<h1 class="heading">About Us</h1>
+<main class="about">
+    <p>betBid.com ia an e-auction site. Here, any user can put an item to auction among our large user-base of buyers.</p>
+    <img src="{% static 'auctions/images/eauction.png' %}" alt="e-auction">
+    <hr>
+    <img src="{% static 'auctions/images/img1.png' %}" alt="bid">
+</main>
+{% endblock %}
