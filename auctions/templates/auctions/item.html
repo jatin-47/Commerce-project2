@@ -39,6 +39,7 @@
             {% if user.username != item.creator %}
             <form action="{% url 'bid' item_id=item.id %}" method="POST">
                 {% csrf_token %}
+                <p>*The bid must be at least as large as the reserve price, and must be greater than any other bids that have been placed by 10% (if any).</p>
                 <section>
                     <input type="number" name="bid" min="{{ nxt_bid }}" value="{{ nxt_bid }}" required>
                     <i class="fa fa-inr"></i>

@@ -23,6 +23,13 @@ def inactive(request):
         "items" : items
     })
 
+def all(request):
+    items = ListItem.objects.all()
+    return render(request, "auctions/index.html", {
+        "heading" : "All Listings",
+        "items" : items
+    })
+
 @login_required(login_url="login")  
 def watchlist(request):
     user = User.objects.get(username = request.user)
@@ -57,12 +64,14 @@ def my_listings(request):
 
 def wins(request):
     temps = ListItem.objects.filter(active=False)
-    items = []
+    items_ids = []
     for temp in temps:
         bids = temp.item.all().order_by('-bid')
-        highestbid = bids.first()
-        if highestbid.bidder.username == request.user:
-            items.append(temp)
+        if bids:
+            highestbid = bids.first()
+            if highestbid.bidder.username == request.user:
+                items_ids.append(temp.id)
+    items = ListItem.objects.filter(pk__in = items_ids)
     return render(request, "auctions/index.html", {
         "heading" : "Your Wins",
         "items" : items
@@ -94,7 +103,8 @@ def item(request, item_id):
     color = None
     next_bid = None
     winner = bids.first()
-    winner = winner.bidder.username
+    if winner:
+        winner = winner.bidder.username
     if item.active:
         price_tag = "Current Price"
         style = None
