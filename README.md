@@ -17,3 +17,14 @@ Users who are signed in should be able to add comments to the listing page. The 
 5. **Watchlist** - Users who are signed in should be able to visit a Watchlist page, which should display all of the listings that a user has added to their watchlist. Clicking on any of those listings should take the user to that listing’s page.
 6. **Categories** - Users should be able to visit a page that displays a list of all listing categories. Clicking on the name of any category should take the user to a page that displays all of the active listings in that category.
 7. **Django Admin Interface** - Via the Django admin interface, a site administrator should be able to view, add, edit, and delete any listings, comments, and bids made on the site.
+<br>
+
+To run this web app in your local machine, follow below steps:
+- Clone this repository
+- Open terminal/command prompt
+- cd into the cloned repository containing the "manage.py" file via terminal
+- Run ```python manage.py runserver```
+- Open any web browser (google chrome is recommended)
+- Open the url ```127.0.0.1:8000``` in the browser
+
+![Screenshot](https://github.com/jatin-47/project2-commerce/blob/master/Screenshot%20(141).png)
