@@ -1,9 +1,8 @@
-# Project2 - Commerce
-https://youtu.be/kyX4GmZtR1Y
+#  Commerce (Project-2)
 
-Django project implementing an e-auction site.
+Django app implementing an e-auction site: https://youtu.be/kyX4GmZtR1Y <br>
 
-It is the project2 in CS50W edX course after project1.
+It is the project2 in CS50W edX course.
 
 #### It has the following 7 features as of 09-08-2020:
 1. **Models** - Your application should have at least three models in addition to the User model: one for auction listings, one for bids, and one for comments made on auction listings. It’s up to you to decide what fields each model should have, and what the types of those fields should be. You may have additional models if you would like.
